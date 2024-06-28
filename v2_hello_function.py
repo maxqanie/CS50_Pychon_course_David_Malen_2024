@@ -2,8 +2,6 @@
 ## 17/06/2024
 def main():
     name = input("What is your name?")
-    hello(name)
-    hello()
     print(hello(name))
 
 # def hello(to="world"):  # "world!" is the default value so for no input we have

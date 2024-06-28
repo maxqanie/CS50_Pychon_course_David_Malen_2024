@@ -2,8 +2,8 @@ import pytest
 from v22_calculator import square
 
 
-def main():
-    test_square()
+# def main():
+#     test_square()
 
 
 # def test_square():
@@ -53,5 +53,5 @@ def test_str():
         square("cat")
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
