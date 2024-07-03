@@ -2,16 +2,48 @@ import csv
 
 
 def main():
-    students = []
-    with open("students_v1.csv") as file:
-        reader = csv.reader(file)
-        for row in reader:
-            students.append({"name": row[0], "home": row[1]})
+    name = input("Name: ")
+    home = input("home: ")
+    house = input("house: ")
 
-    print(students)
+    with open("students_v3.csv", "a") as file:
+        writer = csv.writer(file)
+        writer.writerow([name, home, house])
 
-    for student in sorted(students, key=lambda student: student["home"]):
-        print(f"{student["name"]} is in {student["home"]}")
+
+
+
+
+# def main():
+#     students = []
+#     # note that the csv file, must be comma separated not space and comma
+#     with open("students_v2.csv") as file:
+#         reader = csv.DictReader(file)
+#         # The difference between DictReader and reader is that every row is read as a dictionary
+#         # allowing the file to be tampered, yet the code will read the data properly as long as
+#         # the headers are set correctly
+#         for row in reader:
+#             students.append({"name": row["name"], "home": row["home"]})
+#
+#     print(students)
+#
+#     for student in sorted(students, key=lambda student: student["home"]):
+#         print(f"{student["name"]} is in {student["home"]}")
+
+
+
+# def main():
+#     students = []
+#     # note that the csv file, must be comma separated not space and comma
+#     with open("students_v1.csv") as file:
+#         reader = csv.reader(file)
+#         for row in reader:
+#             students.append({"name": row[0], "home": row[1]})
+#
+#     print(students)
+#
+#     for student in sorted(students, key=lambda student: student["home"]):
+#         print(f"{student["name"]} is in {student["home"]}")
 
 
 
