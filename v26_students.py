@@ -1,31 +1,42 @@
 import csv
 
+# def main():
+#     name = input("Name: ")
+#     home = input("home: ")
+#     house = input("house: ")
+#
+#     with open("students_v4.csv", "a") as file:
+#         writer = csv.DictWriter(file, fieldnames=["name", "house","home"])      # Determines the order of columns
+#         writer.writerow({"name": name, "home": home, "house": house})
+
+
+#
+# def main():
+#     name = input("Name: ")
+#     home = input("home: ")
+#     house = input("house: ")
+#
+#     with open("students_v3.csv", "a") as file:
+#         writer = csv.writer(file)
+#         writer.writerow([name, home, house])
+
+
+
+
 
 def main():
-    name = input("Name: ")
-    home = input("home: ")
-    house = input("house: ")
+    students = []
+    # note that the csv file, must be comma separated not space and comma
+    with open("students_v2.csv") as file:
+        reader = csv.DictReader(file)
+        print(reader)
+        # The difference between DictReader and reader is that every row is read as a dictionary
+        # allowing the file to be tampered, yet the code will read the data properly as long as
+        # the headers are set correctly
+        for row in reader:
+            students.append(row)
 
-    with open("students_v3.csv", "a") as file:
-        writer = csv.writer(file)
-        writer.writerow([name, home, house])
-
-
-
-
-
-# def main():
-#     students = []
-#     # note that the csv file, must be comma separated not space and comma
-#     with open("students_v2.csv") as file:
-#         reader = csv.DictReader(file)
-#         # The difference between DictReader and reader is that every row is read as a dictionary
-#         # allowing the file to be tampered, yet the code will read the data properly as long as
-#         # the headers are set correctly
-#         for row in reader:
-#             students.append({"name": row["name"], "home": row["home"]})
-#
-#     print(students)
+    print(students)
 #
 #     for student in sorted(students, key=lambda student: student["home"]):
 #         print(f"{student["name"]} is in {student["home"]}")
