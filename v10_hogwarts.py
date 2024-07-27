@@ -11,13 +11,12 @@ for i in range(len(students)):
 students = {
     "Harry" : "Gryffindor",
     "Hermione" : "Gryffindor",
-    "Ron" : "G ryffindor",
+    "Ron" : "Gryffindor",
     "Draco" : "Gryffindor",
 }
 print(students["Harry"])
 for student in students:
     print(student, students[student])
-
 
 students = [
     {"Name" : "Hermione", "House" : "Gryffindor", "Patronous" : "Otter"},
